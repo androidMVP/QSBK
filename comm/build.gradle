@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin:'kotlin-android'
+def cfg = rootProject.ext.configuration;
+def presentationDependencies = rootProject.ext.presentationDependencies
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile presentationDependencies.appcompatV4
+    compile presentationDependencies.appcompatV7
+    compile presentationDependencies.okhttp
+    compile presentationDependencies.okio
+    compile presentationDependencies.retrofit
+    compile presentationDependencies.loggingInterceptor
+    compile presentationDependencies.adapterRx
+    compile presentationDependencies.adapterGson
+    compile presentationDependencies.gson
+    compile presentationDependencies.rxAndroid
+    compile presentationDependencies.design
+    compile presentationDependencies.cardview
+    compile presentationDependencies.glide
+    compile presentationDependencies.eventbus
+    compile presentationDependencies.BaseRecyclerViewAdapterHelper
+    compile "org.jetbrains.kotlin:kotlin-stdlib:1.1.3"
+    compile "org.jetbrains.anko:anko-sdk15:0.9.1a"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+
+}
+repositories {
+    mavenCentral()
+}

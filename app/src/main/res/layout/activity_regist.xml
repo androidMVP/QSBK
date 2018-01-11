@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_app_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/im_mobile_regist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/user_mobile" />
+
+        <EditText
+            android:id="@+id/et_mobile_reigst"
+            style="@style/input_style"
+            android:layout_toLeftOf="@+id/im_remove_mobile_regist"
+            android:layout_toRightOf="@+id/im_mobile_regist"
+            android:hint="请输入手机号码" />
+
+        <ImageView
+            android:id="@+id/im_remove_mobile_regist"
+            style="@style/input_remove_im" />
+
+        <View
+            style="@style/line"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/im_psw_regist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/user_password" />
+
+        <EditText
+            android:id="@+id/et_psw_reigst"
+            style="@style/input_style"
+            android:inputType="textPassword"
+            android:layout_toLeftOf="@+id/im_remove_psw_regist"
+            android:layout_toRightOf="@+id/im_psw_regist"
+            android:hint="请输入密码，6~18位字符" />
+
+        <ImageView
+            android:id="@+id/im_remove_psw_regist"
+            style="@style/input_remove_im" />
+
+        <View
+            style="@style/line"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:text="@string/regist"
+        android:id="@+id/tv_regist"
+       style="@style/bt_style" />
+</LinearLayout>

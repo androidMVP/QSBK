@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin:'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+def cfg = rootProject.ext.configuration;
+def presentationDependencies = rootProject.ext.presentationDependencies
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.mvp.news"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+kapt {
+    generateStubs = true
+}
+repositories {
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots"}
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile project(path: ':comm')
+    compile project(path: ':commbusiness')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    kapt "com.google.dagger:dagger-compiler:2.6"
+    compile "com.google.dagger:dagger:2.6"
+    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
+    kapt 'com.jakewharton:butterknife-compiler:8.6.0'
+    compile 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mvp.news.ui.activity.MainActivity">
+
+    <include
+        layout="@layout/include_app_bar"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+
+
+
+
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        android:orientation="horizontal">
+
+        <com.viewpagerindicator.TabPageIndicator
+            android:id="@+id/titlepageindicator_main"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_toLeftOf="@+id/im_audit_mian"
+            android:layout_weight="1"
+            android:background="@color/color_b1"
+            app:strokeWidth="0dp" />
+
+        <ImageView
+            android:id="@+id/im_audit_mian"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/ic_audit" />
+
+        <ImageView
+            android:id="@+id/im_create_mian"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/group_create" />
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpaeg_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/tb_main" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e5e5e5" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            style="@style/main_RadioButton_style"
+            android:drawableTop="@drawable/ic_qiushi_selector"
+            android:text="@string/home" />
+
+
+        <RadioButton
+            style="@style/main_RadioButton_style"
+            android:drawableTop="@drawable/ic_qiushi_circle_selector"
+            android:text="@string/qiushi_circle" />
+
+
+        <RadioButton
+            style="@style/main_RadioButton_style"
+            android:drawableTop="@drawable/ic_live_selector"
+            android:text="@string/live" />
+
+        <RadioButton
+            style="@style/main_RadioButton_style"
+            android:drawableTop="@drawable/ic_paper_selector"
+            android:text="@string/paper" />
+
+        <RadioButton
+            style="@style/main_RadioButton_style"
+            android:drawableTop="@drawable/ic_mine_selector"
+            android:text="@string/me" />
+
+
+    </RadioGroup>
+
+
+</LinearLayout>
