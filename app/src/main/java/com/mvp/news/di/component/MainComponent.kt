@@ -1,6 +1,7 @@
 package com.mvp.news.di.component
 
 import com.mvp.news.di.module.MainModule
+import com.mvp.news.ui.activity.IndexFragment
 import com.mvp.news.ui.activity.MainActivity
 import com.mvp.news.ui.fragment.AndroidFragment
 import com.mvp.news.ui.fragment.ArticalFragment
@@ -17,4 +18,6 @@ interface MainComponent {
     fun injectTo(mainFragment: AndroidFragment)
 
     fun injectTo(articalFragment: ArticalFragment)
+
+    fun injectTo(indexFragment: IndexFragment)
 }

@@ -14,5 +14,6 @@
     <string name="regist_send_msg_to">短信已发送到+%1$s</string>
     <string name="error_mobile_not_empty">手机号不能为空</string>
     <string name="error_psw_not_empty">密码不能为空</string>
+    <string name="user_info_regist_login">注册/登录</string>
 
 </resources>

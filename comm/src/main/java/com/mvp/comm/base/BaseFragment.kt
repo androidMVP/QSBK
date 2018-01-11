@@ -10,7 +10,7 @@ import android.view.View
  */
 abstract class BaseFragment : Fragment() {
 
-    var rootView: View? = null
+     var rootView: View? = null
 
     var activity: Activity? = null
 

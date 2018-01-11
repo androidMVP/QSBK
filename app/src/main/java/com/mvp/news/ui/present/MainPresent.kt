@@ -25,7 +25,7 @@ class MainPresent(val mainView: MainView, val categoryBll: CategoryBll) {
             }
 
         })
-
     }
+
 
 }

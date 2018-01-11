@@ -2,7 +2,9 @@ package com.mvp.news.ui.activity
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
+import android.widget.RadioGroup
 import com.mvp.comm.base.BaseActivity
 import com.mvp.news.App
 import com.mvp.news.R
@@ -16,62 +18,59 @@ import com.viewpagerindicator.TabPageIndicator
 import org.jetbrains.anko.find
 import javax.inject.Inject
 
-class MainActivity : BaseActivity(), MainView {
+class MainActivity : BaseActivity() {
 
+    var currentFragment: Fragment? = null
 
-    override fun showError(code: Int, message: String) {
-    }
+    lateinit var userInfoFragment: Fragment
 
-    lateinit var viewPage: ViewPager
+    lateinit var indexFragment: Fragment
 
-    lateinit var titlepageindicator: TabPageIndicator
-
-    lateinit var fragmentListAdapter: ListFragmentAdapter
-
-    @Inject
-    lateinit var mainPresent: MainPresent
+    lateinit var rgMain: RadioGroup
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        inflaterFragment()
     }
 
     override fun initView() {
-        App.graph.plus(MainModule(this)).injectTo(this)
-        viewPage = find(R.id.viewpaeg_main)
-        titlepageindicator = find(R.id.titlepageindicator_main)
-
-        fragmentListAdapter = ListFragmentAdapter(mutableListOf(), mutableListOf(), supportFragmentManager)
-        viewPage.adapter = fragmentListAdapter
-        titlepageindicator.setViewPager(viewPage)
+        rgMain = find(R.id.rg_main)
     }
 
-    override fun initListener() {}
+    override fun initListener() {
+        rgMain.setOnCheckedChangeListener { group, checkedId -> }
+    }
 
     override
     fun initData() {
-        mainPresent.reqeustCategoryList()
     }
 
+    /**
+     * 填充fragment
+     */
+    fun inflaterFragment() {
+        indexFragment = IndexFragment()
 
-    override fun showLoading() {
-        dialog.show()
+        userInfoFragment = MainUserInfoFragment()
+
+        showFragment(indexFragment)
     }
 
-    override fun hideLoading() {
-        dialog.dismiss()
-    }
-
-
-    override fun showCategoryData(data: List<Category>) {
-        val fragmentLists = mutableListOf<Fragment>()
-        val titleList = mutableListOf<String>()
-        for (item in data) {
-            fragmentLists.add(ArticalFragment.getFragment(item.title))
-            titleList.add(item.title)
+    fun showFragment(fragment: Fragment) {
+        if (currentFragment != fragment) {
+            val beginTransaction = supportFragmentManager.beginTransaction()
+            beginTransaction.hide(currentFragment)
+            currentFragment = fragment
+            if (fragment?.isAdded!!) {
+                beginTransaction.add(R.id.fl_main, fragment).commit()
+            } else {
+                beginTransaction.show(fragment).commit()
+            }
         }
-        fragmentListAdapter.replaceData(titleList, fragmentLists)
-        titlepageindicator.notifyDataSetChanged()
+
     }
+
+
 }
