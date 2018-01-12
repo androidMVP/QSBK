@@ -32,28 +32,33 @@
 
 
         <RadioButton
+            android:id="@+id/rb_index_main"
             style="@style/main_RadioButton_style"
             android:drawableTop="@drawable/ic_qiushi_selector"
             android:text="@string/home" />
 
 
         <RadioButton
+            android:id="@+id/rb_qs_main"
             style="@style/main_RadioButton_style"
             android:drawableTop="@drawable/ic_qiushi_circle_selector"
             android:text="@string/qiushi_circle" />
 
 
         <RadioButton
+            android:id="@+id/rb_live_main"
             style="@style/main_RadioButton_style"
             android:drawableTop="@drawable/ic_live_selector"
             android:text="@string/live" />
 
         <RadioButton
+            android:id="@+id/rb_paper_main"
             style="@style/main_RadioButton_style"
             android:drawableTop="@drawable/ic_paper_selector"
             android:text="@string/paper" />
 
         <RadioButton
+            android:id="@+id/rb_me_main"
             style="@style/main_RadioButton_style"
             android:drawableTop="@drawable/ic_mine_selector"
             android:text="@string/me" />

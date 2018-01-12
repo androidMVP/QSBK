@@ -32,15 +32,21 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        inflaterFragment()
+
     }
 
     override fun initView() {
         rgMain = find(R.id.rg_main)
+        inflaterFragment()
     }
 
     override fun initListener() {
-        rgMain.setOnCheckedChangeListener { group, checkedId -> }
+        rgMain.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.rb_index_main -> showFragment(indexFragment)
+                R.id.rb_me_main -> showFragment(userInfoFragment)
+            }
+        }
     }
 
     override
@@ -58,9 +64,10 @@ class MainActivity : BaseActivity() {
         showFragment(indexFragment)
     }
 
-    fun showFragment(fragment: Fragment) {
+    fun showFragment(fragment: Fragment?) {
         if (currentFragment != fragment) {
             val beginTransaction = supportFragmentManager.beginTransaction()
+            if(currentFragment!=null)
             beginTransaction.hide(currentFragment)
             currentFragment = fragment
             if (fragment?.isAdded!!) {
@@ -68,6 +75,7 @@ class MainActivity : BaseActivity() {
             } else {
                 beginTransaction.show(fragment).commit()
             }
+
         }
 
     }
