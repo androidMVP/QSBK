@@ -1,7 +1,7 @@
 package com.mvp.news.di.component
 
 import com.mvp.news.di.module.MainModule
-import com.mvp.news.ui.activity.IndexFragment
+import com.mvp.news.ui.fragment.IndexFragment
 import com.mvp.news.ui.activity.MainActivity
 import com.mvp.news.ui.fragment.ArticalFragment
 import dagger.Subcomponent

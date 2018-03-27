@@ -1,9 +1,8 @@
 package com.mvp.comm.network
 
-import rx.Observable
-import rx.Observable.Transformer
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 /**
  * Created by Administrator on 2017/8/24 0024.
@@ -25,7 +24,7 @@ fun <T> createData(data: T?): Observable<T> {
     return Observable.create { subscriber ->
         try {
             subscriber.onNext(data)
-            subscriber.onCompleted()
+            subscriber.onComplete()
         } catch (var3: Exception) {
             subscriber.onError(var3)
         }

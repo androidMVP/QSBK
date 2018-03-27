@@ -1,31 +1,27 @@
 package com.mvp.comm.base
 
+import com.mvp.comm.network.Result
+import com.mvp.comm.network.composessssss
+import io.reactivex.Observable
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposables
+import io.reactivex.observers.DisposableObserver
 import kotlin.system.exitProcess
 
 /**
  * Created by Administrator on 2018/3/26 0026.
  */
-abstract class UseCase<in Q : UseCase.RequestValues, in P : UseCase.ResponseValue> {
+abstract class UseCase<T, Params> {
 
 
-    private var requestValues: Q? = null
+    private val disposables: CompositeDisposable = CompositeDisposable()
 
-    private var useCaseCallback: UseCaseCallback<P>? = null
+    abstract fun buildUseCaseObservable(requestValues: Params?): Observable<Result<T>>
 
-    fun run() {
-        executeUseCase(requestValues)
-    }
 
-    abstract fun executeUseCase(requestValues: Q?)
-
-    interface RequestValues
-
-    interface ResponseValue
-
-    interface UseCaseCallback<R> {
-        fun onSuccess(response: R)
-
-        fun onError()
+    open fun execute(params: Params) {
+       val observer= buildUseCaseObservable(params).composessssss()
+        disposables.add(observer)
     }
 
 }

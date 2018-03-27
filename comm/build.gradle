@@ -38,6 +38,7 @@ dependencies {
     compile presentationDependencies.adapterGson
     compile presentationDependencies.gson
     compile presentationDependencies.rxAndroid
+    compile presentationDependencies.rxJava
     compile presentationDependencies.design
     compile presentationDependencies.cardview
     compile presentationDependencies.glide

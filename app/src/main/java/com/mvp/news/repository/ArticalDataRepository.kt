@@ -2,8 +2,8 @@ package com.mvp.news.repository
 
 import com.mvp.comm.network.composessssss
 import com.mvp.news.api.API
+import com.mvp.news.domain.usercase.artical.GetArticalListTask
 import com.mvp.news.modle.Artist
-import retrofit2.http.Path
 import rx.Observable
 import javax.inject.Inject
 
@@ -13,13 +13,10 @@ import javax.inject.Inject
 class ArticalDataRepository : ArticalRepository {
 
     @Inject
-    lateinit var ap: API
+    lateinit var api: API
 
-    override fun getArticalList(category: String, count: Int, page: Int): Observable<List<Artist>> =
-        ap.getArticalList(category, count, page).composessssss()
-
-
-
+    override fun getArticalList(request: GetArticalListTask.RequestValues?): Observable<List<Artist>> =
+            api.getArticalList(request?.category ?: "all", request?.count ?: 10, request?.page ?: 1).composessssss()
 
 
 }

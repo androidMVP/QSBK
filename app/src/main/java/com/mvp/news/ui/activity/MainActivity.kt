@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment
 import android.widget.RadioGroup
 import com.mvp.comm.base.BaseActivity
 import com.mvp.news.R
+import com.mvp.news.ui.fragment.IndexFragment
+import com.mvp.news.ui.fragment.MainUserInfoFragment
 import org.jetbrains.anko.find
 
 class MainActivity : BaseActivity() {
