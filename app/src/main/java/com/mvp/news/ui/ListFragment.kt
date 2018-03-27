@@ -13,14 +13,13 @@ import com.mvp.comm.utils.waitDialog
 import com.mvp.comm.base.BaseFragment
 import com.mvp.news.R
 import com.mvp.news.ui.view.LoadDataView
-import com.mvp.news.ui.view.MainView
 import org.jetbrains.anko.find
 
 /**
  * Created by Administrator on 2017/8/25 0025.
  */
 
-abstract class ListFragment<T> : BaseFragment(), LoadDataView, MainView {
+abstract class ListFragment<T> : BaseFragment(), LoadDataView {
 
     var recycleView: RecyclerView? = null
 

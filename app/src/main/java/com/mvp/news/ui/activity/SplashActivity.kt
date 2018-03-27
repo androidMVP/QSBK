@@ -1,12 +1,8 @@
 package com.mvp.news.ui.activity
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.ImageView
 import com.mvp.comm.base.BaseActivity
-import com.mvp.news.CView
 import com.mvp.news.R
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
@@ -15,8 +11,6 @@ import rx.Subscriber
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
-import android.view.MotionEvent
-import android.view.View.OnTouchListener
 
 
 /**

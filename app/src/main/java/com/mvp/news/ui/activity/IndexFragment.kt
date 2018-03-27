@@ -17,7 +17,6 @@ import com.mvp.news.ui.present.MainPresent
 import com.mvp.news.ui.view.MainView
 import com.viewpagerindicator.TabPageIndicator
 import org.jetbrains.anko.find
-import java.nio.file.Files.find
 import javax.inject.Inject
 
 /**

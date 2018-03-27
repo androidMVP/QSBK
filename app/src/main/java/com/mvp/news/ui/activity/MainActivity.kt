@@ -2,21 +2,10 @@ package com.mvp.news.ui.activity
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.view.ViewPager
 import android.widget.RadioGroup
 import com.mvp.comm.base.BaseActivity
-import com.mvp.news.App
 import com.mvp.news.R
-import com.mvp.news.di.module.MainModule
-import com.mvp.news.modle.Category
-import com.mvp.news.ui.adapter.ListFragmentAdapter
-import com.mvp.news.ui.fragment.ArticalFragment
-import com.mvp.news.ui.present.MainPresent
-import com.mvp.news.ui.view.MainView
-import com.viewpagerindicator.TabPageIndicator
 import org.jetbrains.anko.find
-import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
 
@@ -65,18 +54,23 @@ class MainActivity : BaseActivity() {
     }
 
     fun showFragment(fragment: Fragment?) {
-        if (currentFragment != fragment) {
-            val beginTransaction = supportFragmentManager.beginTransaction()
-            if(currentFragment!=null)
-            beginTransaction.hide(currentFragment)
+        if (currentFragment == null) {
             currentFragment = fragment
-            if (fragment?.isAdded!!) {
-                beginTransaction.add(R.id.fl_main, fragment).commit()
-            } else {
-                beginTransaction.show(fragment).commit()
-            }
+            supportFragmentManager.beginTransaction().add(R.id.fl_main, fragment).commit()
+        } else {
+            if (currentFragment !== fragment) {
+                val beginTransaction = supportFragmentManager.beginTransaction()
+                beginTransaction.hide(currentFragment)
+                currentFragment = fragment
+                if (fragment?.isAdded == true) {
+                    beginTransaction.add(R.id.fl_main, fragment).commit()
+                } else {
+                    beginTransaction.show(fragment).commit()
+                }
 
+            }
         }
+
 
     }
 

@@ -10,14 +10,8 @@ import rx.schedulers.Schedulers
  */
 
 
-fun <T> transResult(): Transformer<Result<T>, T> {
-    return Transformer<Result<T>, T> { tObservable ->
-        tObservable.flatMap { t -> createData(t.data) }
-    }
-}
 
 fun <R> Observable<Result<R>>.composessssss(): Observable<R> {
-
     return this.flatMap { t ->
         if (t.code == 0)
             createData(t.data)

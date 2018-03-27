@@ -2,13 +2,11 @@ package com.mvp.news.api
 
 import com.mvp.comm.network.Result
 import com.mvp.commbusiness.bean.UserInfo
+import com.mvp.news.modle.Artist
 import com.mvp.news.modle.Category
 import com.mvp.news.modle.MsgCodeResponse
 import com.mvp.news.modle.RegistInfo
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 import rx.Observable
 
 /**
@@ -16,19 +14,6 @@ import rx.Observable
  */
 
 interface API {
-
-    /*  @GET("Android/{data}/{index}")
-      fun getAndroidData (@Path("data") groupId:Int,@Path("index") index:Int): Observable<Result<List<Android?>>>
-
-
-      @GET("福利/{data}/{index}")
-      fun getFuli(@Path("data") groupId:Int,@Path("index") index:Int): Observable<Result<List<Fuli?>>>
-
-
-
-
-      @GET("github/list")
-      fun getArtical(): Observable<Result<List<GithubProject>>>*/
 
     @GET("category/getCategoryList")
     fun getArtical(): Observable<Result<List<Category>>>
@@ -38,5 +23,9 @@ interface API {
 
     @POST("user/regist")
     fun regist(@Body registInfo: RegistInfo): Observable<Result<UserInfo>>
+
+
+    @GET("data/{category}/{count}/{page}")
+    fun getArticalList(@Path("category") category: String, @Path("count") count: Int, @Path("page") page: Int): Observable<Result<List<Artist>>>
 
 }
