@@ -9,7 +9,7 @@ import com.mvp.comm.utils.getForegroundSpan
 import com.mvp.commbusiness.bean.UserInfo
 import com.mvp.news.App
 import com.mvp.news.R
-import com.mvp.news.di.module.UserModule
+import com.mvp.news.di.subcomponent.user.UserModule
 import com.mvp.news.modle.RegistInfo
 import com.mvp.news.repository.TimeBll
 import com.mvp.news.ui.present.MsgCodePresent

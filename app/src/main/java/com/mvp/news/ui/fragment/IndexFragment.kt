@@ -9,10 +9,9 @@ import android.view.ViewGroup
 import com.mvp.comm.base.BaseFragment
 import com.mvp.news.App
 import com.mvp.news.R
-import com.mvp.news.di.module.MainModule
+import com.mvp.news.di.subcomponent.main.MainModule
 import com.mvp.news.modle.Category
 import com.mvp.news.ui.adapter.ListFragmentAdapter
-import com.mvp.news.ui.fragment.ArticalFragment
 import com.mvp.news.ui.present.MainPresent
 import com.mvp.news.ui.view.MainView
 import com.viewpagerindicator.TabPageIndicator

@@ -1,6 +1,5 @@
-package com.mvp.news.di.component
+package com.mvp.news.di.subcomponent.user
 
-import com.mvp.news.di.module.UserModule
 import com.mvp.news.ui.activity.MsgCodeActivity
 import dagger.Subcomponent
 

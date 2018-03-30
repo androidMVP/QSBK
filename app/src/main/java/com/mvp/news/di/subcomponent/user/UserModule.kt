@@ -1,4 +1,4 @@
-package com.mvp.news.di.module
+package com.mvp.news.di.subcomponent.user
 
 import com.mvp.news.api.API
 import com.mvp.news.repository.UserBll

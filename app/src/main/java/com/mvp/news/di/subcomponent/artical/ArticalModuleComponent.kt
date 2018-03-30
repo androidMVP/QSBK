@@ -1,7 +1,5 @@
 package com.mvp.news.di.subcomponent.artical
 
-import com.mvp.news.di.module.UserModule
-import com.mvp.news.ui.activity.MsgCodeActivity
 import com.mvp.news.ui.fragment.ArticalFragment
 import dagger.Subcomponent
 

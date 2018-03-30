@@ -5,6 +5,7 @@ import com.mvp.commbusiness.bean.BusinessError
 import com.mvp.news.modle.Category
 import com.mvp.news.repository.CategoryBll
 import com.mvp.news.ui.view.MainView
+import org.jetbrains.annotations.NotNull
 import rx.Subscriber
 
 /**
@@ -13,7 +14,8 @@ import rx.Subscriber
 class MainPresent(val mainView: MainView, val categoryBll: CategoryBll) {
 
 
-    fun reqeustCategoryList() {
+
+    fun reqeustCategoryList( ) {
         mainView.showLoading()
         categoryBll.getCategoryList().subscribe(object : Subscriber<List<Category>>() {
             override fun onCompleted() {
