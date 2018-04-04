@@ -16,7 +16,7 @@ abstract class UseCase<T, Params>(val postExecutionThread: PostExecutionThread?)
 
     private val disposables: CompositeDisposable = CompositeDisposable()
 
-    abstract fun buildUseCaseObservable(requestValues: Params?): Observable<Result<List<com.mvp.news.modle.Artist>>>
+    abstract fun buildUseCaseObservable(requestValues: Params?): Observable<Result<T>>
 
 
     open fun execute(observer: DisposableObserver<T>, params: Params) {

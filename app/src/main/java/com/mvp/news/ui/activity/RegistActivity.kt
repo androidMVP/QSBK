@@ -75,7 +75,7 @@ class RegistActivity : BaseActivity() {
             return
         }
 
-        startActivity<MsgCodeActivity>("mobile" to mobile, "psw" to psw)
+//        startActivity<MsgCodeActivity>("mobile" to mobile, "psw" to psw)
     }
 
 }

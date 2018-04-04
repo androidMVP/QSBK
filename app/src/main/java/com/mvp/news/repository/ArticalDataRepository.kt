@@ -8,9 +8,7 @@ import javax.inject.Inject
 /**
  * Created by Administrator on 2018/3/27 0027.
  */
-class ArticalDataRepository @Inject constructor() : ArticalRepository {
-    @Inject
-    lateinit var api: API
+class ArticalDataRepository constructor(val api: API): ArticalRepository {
 
     override fun getArticalList(category: String?, count: Int?, page: Int?): io.reactivex.Observable<Result<List<Artist>>> {
         return api.getArticalList(category, count, page)

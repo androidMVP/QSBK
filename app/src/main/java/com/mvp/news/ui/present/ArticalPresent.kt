@@ -7,10 +7,7 @@ import javax.inject.Inject
 /**
  * Created by Administrator on 2018/3/27 0027.
  */
-class ArticalPresent: Presenter {
-
-    @Inject
-    lateinit var articalDataRepository:ArticalRepository
+class ArticalPresent @Inject constructor(private val articalDataRepository:ArticalRepository): Presenter {
 
 
     override fun pause() {
@@ -23,7 +20,7 @@ class ArticalPresent: Presenter {
     }
 
     fun requestArticalList(category: String, count: Int, page: Int){
-        articalDataRepository.getArticalList("android",)
+        articalDataRepository.getArticalList("android",10,1)
     }
 
 

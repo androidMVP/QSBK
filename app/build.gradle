@@ -23,6 +23,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions { //打包时的相关配置
+        exclude  'META-INF/rxjava.properties'
+    }
+
 }
 kapt {
     generateStubs = true
@@ -48,3 +53,4 @@ dependencies {
     compile 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
+

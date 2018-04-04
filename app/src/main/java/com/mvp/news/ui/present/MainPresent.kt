@@ -17,21 +17,21 @@ class MainPresent(val mainView: MainView, val categoryBll: CategoryBll) {
 
     fun reqeustCategoryList( ) {
         mainView.showLoading()
-        categoryBll.getCategoryList().subscribe(object : Subscriber<List<Category>>() {
-            override fun onCompleted() {
-            }
-
-            override fun onNext(data: List<Category>) {
-                mainView.hideLoading()
-                mainView.showCategoryData(data)
-            }
-
-            override fun onError(e: Throwable?) {
-                mainView.hideLoading()
-                mainView.showError(BusinessError.COMM_ERROR.code, BusinessError.COMM_ERROR.msg)
-            }
-
-        })
+//        categoryBll.getCategoryList().subscribe(object : Subscriber<List<Category>>() {
+//            override fun onCompleted() {
+//            }
+//
+//            override fun onNext(data: List<Category>) {
+//                mainView.hideLoading()
+//                mainView.showCategoryData(data)
+//            }
+//
+//            override fun onError(e: Throwable?) {
+//                mainView.hideLoading()
+//                mainView.showError(BusinessError.COMM_ERROR.code, BusinessError.COMM_ERROR.msg)
+//            }
+//
+//        })
 
     }
 

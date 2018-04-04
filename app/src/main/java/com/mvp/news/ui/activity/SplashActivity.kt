@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.widget.ImageView
 import com.mvp.comm.base.BaseActivity
 import com.mvp.news.R
+import io.reactivex.Observable
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
-import rx.Observable
-import rx.Subscriber
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
+import org.reactivestreams.Subscriber
 import java.util.concurrent.TimeUnit
 
 
@@ -39,16 +41,20 @@ class SplashActivity : BaseActivity() {
                 .timer(2, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(object : Subscriber<Long>() {
+                .subscribe(object : Observer<Long> {
+                    override fun onNext(value: Long?) {
+                    }
+
+                    override fun onComplete() {
+                        startActivity<MainActivity>()
+                    }
+
                     override fun onError(e: Throwable?) {
                     }
 
-                    override fun onNext(t: Long?) {
+                    override fun onSubscribe(d: Disposable?) {
                     }
 
-                    override fun onCompleted() {
-                        startActivity<MainActivity>()
-                    }
                 })
     }
 

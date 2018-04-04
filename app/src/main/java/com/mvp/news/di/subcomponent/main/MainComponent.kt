@@ -11,9 +11,5 @@ import dagger.Subcomponent
 @Subcomponent(modules = arrayOf(MainModule::class))
 interface MainComponent {
 
-    fun injectTo(mainActivity: MainActivity)
-
-    fun injectTo(articalFragment: ArticalFragment)
-
     fun injectTo(indexFragment: IndexFragment)
 }
