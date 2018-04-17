@@ -19,6 +19,6 @@ class GetArticalListTask @Inject constructor(val articalRepository: ArticalRepos
     }
 
 
-    class Params(val ategory: String, val count: Int, val page: Int)
+    class Params(val ategory: String?, val count: Int, val page: Int)
 
 }

@@ -1,8 +1,10 @@
 package com.mvp.news.di.module
 
 import android.content.Context
+import com.mvp.comm.executor.PostExecutionThread
 import com.mvp.comm.network.AppRetrofit
 import com.mvp.news.App
+import com.mvp.news.UIThread
 import com.mvp.news.api.API
 import dagger.Module
 import dagger.Provides
@@ -21,6 +23,9 @@ class AppModule(private val app: App){
 
     @Provides @Singleton
     fun provideAPI() = AppRetrofit.getApiService(API::class.java)
+
+    @Provides @Singleton
+    fun provideUIThread(): PostExecutionThread = UIThread()
 
 
 

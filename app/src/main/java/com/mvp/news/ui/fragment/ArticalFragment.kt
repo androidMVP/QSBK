@@ -7,6 +7,7 @@ import com.chad.library.adapter.base.BaseViewHolder
 import com.mvp.news.App
 import com.mvp.news.R
 import com.mvp.news.di.subcomponent.artical.ArticalModule
+import com.mvp.news.di.subcomponent.main.MainModule
 import com.mvp.news.modle.ContentArtical
 import com.mvp.news.ui.ListFragment
 import com.mvp.news.ui.adapter.QSBKArticalAdapter
@@ -26,6 +27,11 @@ class ArticalFragment : ListFragment<ContentArtical?>() {
 
     @Inject
     lateinit var articalPresent: ArticalPresent
+
+    override fun initView() {
+        super.initView()
+        App.graph.plus(ArticalModule()).injectTo (this)
+    }
 
 
     override fun showError(code: Int, message: String) {

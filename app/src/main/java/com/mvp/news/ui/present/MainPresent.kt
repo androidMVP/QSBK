@@ -16,7 +16,9 @@ class MainPresent(val mainView: MainView, val categoryBll: CategoryBll) {
 
 
     fun reqeustCategoryList( ) {
-        mainView.showLoading()
+
+
+        mainView.showCategoryData( mutableListOf<Category>(Category("ios")))
 //        categoryBll.getCategoryList().subscribe(object : Subscriber<List<Category>>() {
 //            override fun onCompleted() {
 //            }
