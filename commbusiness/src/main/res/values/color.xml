@@ -14,4 +14,6 @@
     <color name="color_5">#555</color>
     <color name="color_dedede">#dedede</color>
     <color name="color_9">#999</color>
+    <color name="white">#fff</color>
+    <color name="transparent">#0000</color>
 </resources>

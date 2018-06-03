@@ -9,7 +9,6 @@ import io.reactivex.schedulers.Schedulers
  */
 
 
-
 fun <R> Observable<Result<R>>.composessssss(): Observable<R> {
     return this.flatMap { t ->
         if (t.code == 0)
@@ -18,7 +17,6 @@ fun <R> Observable<Result<R>>.composessssss(): Observable<R> {
             Observable.error(BllException(t.code, t.msg ?: "系统异常"))
     }.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
 }
-
 
 fun <T> createData(data: T?): Observable<T> {
     return Observable.create { subscriber ->

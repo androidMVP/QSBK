@@ -7,9 +7,8 @@ import com.mvp.comm.utils.getColorssss
 import com.mvp.comm.base.BaseActivity
 import com.mvp.news.R
 import com.mvp.news.ui.listener.AfterTextWatcher
-import org.jetbrains.anko.enabled
+
 import org.jetbrains.anko.find
-import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 /**
@@ -44,13 +43,13 @@ class RegistActivity : BaseActivity() {
 
         registMobileEt?.addTextChangedListener(object : AfterTextWatcher() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                registTv?.enabled = registMobileEt?.text?.isNotEmpty()!! and registPswEt?.text?.isNotEmpty()!!
+                registTv?.isEnabled = registMobileEt?.text?.isNotEmpty()!! and registPswEt?.text?.isNotEmpty()!!
             }
         })
 
         registPswEt?.addTextChangedListener(object : AfterTextWatcher() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                registTv?.enabled = registMobileEt?.text?.isNotEmpty()!! and registPswEt?.text?.isNotEmpty()!!
+                registTv?.isEnabled = registMobileEt?.text?.isNotEmpty()!! and registPswEt?.text?.isNotEmpty()!!
             }
         })
 

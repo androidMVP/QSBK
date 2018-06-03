@@ -23,7 +23,6 @@
         <activity android:name="com.mvp.news.ui.activity.RegistActivity" />
 
 
-        <activity android:name=".ui.activity.MsgCodeActivity" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:theme="@style/StyledIndicators" />

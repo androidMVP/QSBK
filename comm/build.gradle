@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 apply plugin:'kotlin-android'
 def cfg = rootProject.ext.configuration;
 def presentationDependencies = rootProject.ext.presentationDependencies
@@ -44,10 +43,13 @@ dependencies {
     compile presentationDependencies.glide
     compile presentationDependencies.eventbus
     compile presentationDependencies.BaseRecyclerViewAdapterHelper
-    compile "org.jetbrains.kotlin:kotlin-stdlib:1.1.3"
-    compile "org.jetbrains.anko:anko-sdk15:0.9.1a"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile presentationDependencies.kotlinStdlib
+    compile presentationDependencies.kotlinStdlibJre
+    compile presentationDependencies.anko
+    implementation presentationDependencies.constraintLayoutVersion
 
+    compile presentationDependencies.viewpagerindicator
+    compile presentationDependencies.glidokhttpIntegration
 
 }
 repositories {

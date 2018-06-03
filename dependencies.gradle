@@ -34,7 +34,7 @@ ext {
             okioVersion                  : '1.11.0',
             rxjavaVersion                : "2.0.2",
             rxandroidVersion             : "2.0.1",
-            adapterRxVersion             : '2.0.2',
+            adapterRxVersion             : '2.4.0',
             adapterGsonVersion           : '2.0.2',
             gridlayout                   : "23.1.0",
             recyclerviewVersion          : '23.4.0',
@@ -47,7 +47,6 @@ ext {
             ucropVersion                 : '2.2.0',
             materialishVersion           : '1.0',
             photoViewVersion             : '1.2.5',
-
             designVersion                : '26.1.0',
             cardviewVerson               : '23.4.0',
             circleimageviewV             : '2.1.0',
@@ -57,7 +56,12 @@ ext {
             bingoogolappleZxingVersion   : '1.1.7',
             androidGifDrableVersion      : '1.2.6',
             adapterHelperVersion         : '2.9.21',
-            viewpagerindicatorVersion    : '2.4.1'
+            viewpagerindicatorVersion    : '2.4.1.1@aar',
+            daggerVersion                : '2.6',
+            kotterknifeVersion           : '0.1.0-SNAPSHOT',
+            glidokhttpIntegrationVersion : '1.5.0@aar',
+            constraintLayoutVersion      : '1.0.2',
+            ankoVersion                  : '0.10.5'
     ]
 
     presentationDependencies = [
@@ -90,7 +94,6 @@ ext {
             photoView                    : "com.commit451:PhotoView:${libraries.photoViewVersion}",
             umanalytics                  : "com.umeng.analytics:analytics:latest.integration",
             materialish                  : "com.pnikosis:materialish-progress:${libraries.materialishVersion}",
-
             design                       : "com.android.support:design:${libraries.designVersion}",
             cardview                     : "com.android.support:cardview-v7:${libraries.cardviewVerson}",
             circleimageview              : "de.hdodenhof:circleimageview:${libraries.circleimageviewV}",
@@ -100,6 +103,14 @@ ext {
             bingoogolappleQr             : "cn.bingoogolapple:bga-qrcodecore:${libraries.bingoogolappleQrVersion}@aar",
             bingoogolappleZxing          : "cn.bingoogolapple:bga-zxing:${libraries.bingoogolappleZxingVersion}@aar",
             androidGifDrable             : "pl.droidsonroids.gif:android-gif-drawable:${libraries.androidGifDrableVersion}",
-            viewpagerindicator           : "com.viewpagerindicator.library:${libraries.viewpagerindicatorVersion}"
+            viewpagerindicator           : "fr.avianey.com.viewpagerindicator:library:${libraries.viewpagerindicatorVersion}",
+            dagger                       : "com.google.dagger:dagger:${libraries.daggerVersion}",
+            daggerCompiler               : "com.google.dagger:dagger-compiler:${libraries.daggerVersion}",
+            kotterknife                  : "com.jakewharton:kotterknife:${libraries.kotterknifeVersion}",
+            kotlinStdlib                 : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+            kotlinStdlibJre              : "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlin_version}",
+            anko                         : "org.jetbrains.anko:anko-sdk15:${libraries.ankoVersion}",
+            glidokhttpIntegration        : "com.github.bumptech.glide:okhttp3-integration:${libraries.glidokhttpIntegrationVersion}",
+            constraintLayoutVersion      : "com.android.support.constraint:constraint-layout:${libraries.constraintLayoutVersion}"
     ]
 }
