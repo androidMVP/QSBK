@@ -1,5 +1,6 @@
 package com.mvp.news.di.subcomponent.main
 
+import com.mvp.news.domain.usercase.artical.GetArticalCategoryTask
 import com.mvp.news.ui.present.MainPresent
 import com.mvp.news.ui.view.MainView
 import dagger.Module
@@ -14,8 +15,7 @@ class MainModule(val view: MainView) {
     @Provides
     fun provideMainView(): MainView = view
 
-    @Provides
-    fun provideMainPresent(mainView: MainView) = MainPresent(mainView)
+
 
 
 }

@@ -1,20 +1,17 @@
 package com.mvp.comm.network
 
 import com.mvp.comm.utils.isConnected
-import rx.Subscriber
+import io.reactivex.observers.DisposableObserver
+import org.reactivestreams.Subscriber
 
 /**
  * Created by Administrator on 2017/8/25 0025.
  */
-abstract class RxSubscribe<T> : Subscriber<T>() {
+abstract class RxSubscribe<T> : DisposableObserver<T>() {
 
 
     override fun onNext(t: T) {
         onSuccess(t)
-    }
-
-    override fun onCompleted() {
-
     }
 
     override fun onError(e: Throwable?) {

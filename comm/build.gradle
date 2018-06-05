@@ -4,15 +4,15 @@ def cfg = rootProject.ext.configuration;
 def presentationDependencies = rootProject.ext.presentationDependencies
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion cfg.compileSdkVersion
+    buildToolsVersion cfg.buildToolsVersion
 
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+        versionCode cfg.versionCode
+        versionName cfg.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -47,7 +47,6 @@ dependencies {
     compile presentationDependencies.kotlinStdlibJre
     compile presentationDependencies.anko
     implementation presentationDependencies.constraintLayoutVersion
-
     compile presentationDependencies.viewpagerindicator
     compile presentationDependencies.glidokhttpIntegration
 

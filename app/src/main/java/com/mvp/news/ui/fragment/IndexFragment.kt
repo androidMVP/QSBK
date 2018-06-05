@@ -10,6 +10,7 @@ import com.mvp.comm.base.BaseFragment
 import com.mvp.news.App
 import com.mvp.news.R
 import com.mvp.news.di.subcomponent.main.MainModule
+import com.mvp.news.domain.usercase.artical.GetArticalCategoryTask
 import com.mvp.news.modle.Category
 import com.mvp.news.ui.adapter.ListFragmentAdapter
 import com.mvp.news.ui.present.MainPresent
@@ -37,19 +38,22 @@ class IndexFragment : BaseFragment(), MainView {
     lateinit var mainPresent: MainPresent
 
 
+
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(R.layout.fragment_index, container,false)
+        return inflater?.inflate(R.layout.fragment_index, container, false)
     }
 
     override fun initData(savedInstanceState: Bundle?) {
-        mainPresent.reqeustCategoryList()
+        val categoryList = mainPresent.reqeustCategoryList()
+        showCategoryData(categoryList)
     }
 
     override fun setListener() {
     }
 
     override fun initView() {
-        App.graph.plus(MainModule(this)).injectTo (this)
+        App.graph.plus(MainModule(this)).injectTo(this)
         viewPage = rootView?.find(R.id.viewpaeg_main)
         titlepageindicator = rootView?.find(R.id.titlepageindicator_main)
 

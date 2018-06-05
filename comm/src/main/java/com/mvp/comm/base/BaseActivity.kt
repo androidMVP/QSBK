@@ -8,6 +8,7 @@ import android.support.design.widget.AppBarLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.View
+import android.view.Window
 import android.view.WindowManager
 import android.widget.TextView
 import com.mvp.comm.R
@@ -30,7 +31,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setSystemBarTransparent()
+//        setSystemBarTransparent()
     }
 
     override fun setContentView(layoutResID: Int) {
@@ -65,9 +66,11 @@ abstract class BaseActivity : AppCompatActivity() {
     fun setSystemBarTransparent() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // LOLLIPOP解决方案
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.statusBarColor = Color.TRANSPARENT;
+//        // 隐藏标题栏
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            // 隐藏状态栏
+            window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             // KITKAT解决方案
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)

@@ -1,18 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-
+def cfg = rootProject.ext.configuration
 def presentationDependencies = rootProject.ext.presentationDependencies
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion cfg.compileSdkVersion
+    buildToolsVersion cfg.buildToolsVersion
     defaultConfig {
         applicationId "com.mvp.news"
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+        versionCode  cfg.versionCode
+        versionName  cfg.versionCode
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -38,9 +38,10 @@ repositories {
 
         compile project(path: ':comm')
         compile project(path: ':commbusiness')
-        kapt "com.google.dagger:dagger-compiler:2.6"
-        compile "com.google.dagger:dagger:2.6"
+
         kapt presentationDependencies.butterknifeCompiler
+        kapt presentationDependencies.daggerCompiler
+        compile presentationDependencies.dagger
 
     }
 }
