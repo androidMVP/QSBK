@@ -2,19 +2,18 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin:'kotlin-android'
 apply plugin: 'kotlin-kapt'
+def cfg = rootProject.ext.configuration
+def presentationDependencies = rootProject.ext.presentationDependencies
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
-
-
+    compileSdkVersion cfg.compileSdkVersion
+    buildToolsVersion cfg.buildToolsVersion
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-
+        applicationId "com.mvp.news"
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+        versionCode  cfg.versionCode
+        versionName  cfg.versionCode
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
