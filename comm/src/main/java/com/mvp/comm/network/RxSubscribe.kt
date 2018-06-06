@@ -14,6 +14,9 @@ abstract class RxSubscribe<T> : DisposableObserver<T>() {
         onSuccess(t)
     }
 
+    override fun onComplete() {
+    }
+
     override fun onError(e: Throwable?) {
         if (!isConnected()) {
             this.onError(RetCodeEnum.NET_WORK_ERROR.code, RetCodeEnum.NET_WORK_ERROR.message)

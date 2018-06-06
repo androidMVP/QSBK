@@ -1,18 +1,19 @@
 package com.mvp.news.ui.present
 
+import android.widget.Toast
 import com.mvp.comm.base.Presenter
+import com.mvp.comm.network.RxSubscribe
 import com.mvp.news.domain.usercase.artical.GetArticalListTask
 import com.mvp.news.modle.Artist
 import com.mvp.news.repository.ArticalRepository
+import com.mvp.news.ui.view.ArticalView
 import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
 
 /**
  * Created by Administrator on 2018/3/27 0027.
  */
-class ArticalPresent @Inject constructor(private val articalListTask:GetArticalListTask): Presenter {
-
-
+class ArticalPresent @Inject constructor(var articalView: ArticalView, val articalListTask: GetArticalListTask) : Presenter {
 
 
     override fun pause() {
@@ -24,19 +25,18 @@ class ArticalPresent @Inject constructor(private val articalListTask:GetArticalL
     override fun resume() {
     }
 
-    fun requestArticalList(category: String, count: Int, page: Int){
-        articalListTask.execute( ArticalObserver(),GetArticalListTask.Params(null,10,1))
+    fun requestArticalList(category: String, count: Int, page: Int) {
+        articalListTask.execute(ArticalObserver(), GetArticalListTask.Params(category, count, page))
     }
 
 
-    class ArticalObserver :DisposableObserver<List<Artist>>(){
-        override fun onError(e: Throwable?) {
+    inner class ArticalObserver : RxSubscribe<List<Artist?>>() {
+        override fun onSuccess(data: List<Artist?>) {
+            articalView.showArticalData(data)
         }
 
-        override fun onNext(artists: List<Artist>?) {
-        }
-
-        override fun onComplete() {
+        override fun onError(code: Int, msg: String) {
+            articalView.showError(code, msg)
         }
 
     }

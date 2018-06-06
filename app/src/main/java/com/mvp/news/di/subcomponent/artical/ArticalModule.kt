@@ -6,6 +6,8 @@ import com.mvp.news.domain.usercase.artical.GetArticalListTask
 import com.mvp.news.repository.ArticalDataRepository
 import com.mvp.news.repository.ArticalRepository
 import com.mvp.news.ui.present.ArticalPresent
+import com.mvp.news.ui.view.ArticalView
+import com.mvp.news.ui.view.MainView
 import dagger.Module
 import dagger.Provides
 
@@ -14,21 +16,18 @@ import dagger.Provides
  */
 
 @Module
-class ArticalModule {
+class ArticalModule(val articalView: ArticalView) {
 
     @Provides
     fun provideArticalRepository(api: API): ArticalRepository {
         return ArticalDataRepository(api)
     }
 
-
     @Provides
-    fun provideGetArticalListTask( articalRepository: ArticalRepository, postExecutionThread: PostExecutionThread): GetArticalListTask {
-        return GetArticalListTask(articalRepository,postExecutionThread)
-    }
+    fun provideArticalView(): ArticalView = articalView
 
-    @Provides
-    fun provideArticalArticalPresent(getArticalListTask: GetArticalListTask) = ArticalPresent(getArticalListTask)
+
+
 
 
 }

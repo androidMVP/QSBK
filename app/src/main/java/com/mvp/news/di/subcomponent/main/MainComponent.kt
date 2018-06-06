@@ -9,7 +9,7 @@ import dagger.Subcomponent
 /**
  * Created by Administrator on 2017/8/24 0024.
  */
-@Subcomponent(modules = arrayOf(MainModule::class,ArticalModule::class))
+@Subcomponent(modules = arrayOf(MainModule::class))
 interface MainComponent {
 
     fun injectTo(indexFragment: IndexFragment)

@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
 
 object AppRetrofit {
 
-    val HOST_URL = "http://192.168.1.122:8080/qsbk/"
+    val HOST_URL = "http://gank.io/api/"
 
     private lateinit var retrofit: Retrofit
 

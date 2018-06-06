@@ -46,7 +46,7 @@ dependencies {
     compile presentationDependencies.kotlinStdlib
     compile presentationDependencies.kotlinStdlibJre
     compile presentationDependencies.anko
-    implementation presentationDependencies.constraintLayoutVersion
+    compile presentationDependencies.constraintLayoutVersion
     compile presentationDependencies.viewpagerindicator
     compile presentationDependencies.glidokhttpIntegration
 

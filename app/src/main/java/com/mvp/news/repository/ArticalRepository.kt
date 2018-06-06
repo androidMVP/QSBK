@@ -12,7 +12,7 @@ import java.util.ArrayList
  */
 interface ArticalRepository {
 
-    fun getArticalList(category: String?, count: Int?, page: Int?): Observable<Result<List<Artist>>>
+    fun getArticalList(category: String?, count: Int?, page: Int?): Observable<Result<List<Artist?>>>
 
     fun getArticalCategory():ArrayList<Category>
 

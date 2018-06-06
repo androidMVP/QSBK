@@ -5,10 +5,9 @@ package com.mvp.comm.network
  */
 class Result<T> {
 
-    val code: Int = 0
+    val error: Boolean = false
 
-    var data: T? = null
+    var results: T? = null
 
-    var msg: String? = null
 
 }

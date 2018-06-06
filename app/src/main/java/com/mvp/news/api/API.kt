@@ -26,6 +26,6 @@ interface API {
 
 
     @GET("data/{category}/{count}/{page}")
-    fun getArticalList(@Path("category") category: String?, @Path("count") count: Int?, @Path("page") page: Int?): Observable<Result<List<Artist>>>
+    fun getArticalList(@Path("category") category: String?, @Path("count") count: Int?, @Path("page") page: Int?): Observable<Result<List<Artist?>>>
 
 }
