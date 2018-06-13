@@ -29,6 +29,10 @@ class ArticalPresent @Inject constructor(var articalView: ArticalView, val artic
         articalListTask.execute(ArticalObserver(), GetArticalListTask.Params(category, count, page))
     }
 
+    fun loadMoreArticalList(category: String, count: Int, page: Int) {
+        articalListTask.execute(LoadMoreArticalObserver(), GetArticalListTask.Params(category, count, page))
+    }
+
 
     inner class ArticalObserver : RxSubscribe<List<Artist?>>() {
         override fun onSuccess(data: List<Artist?>) {
@@ -40,6 +44,18 @@ class ArticalPresent @Inject constructor(var articalView: ArticalView, val artic
         }
 
     }
+
+    inner class LoadMoreArticalObserver : RxSubscribe<List<Artist?>>() {
+        override fun onSuccess(data: List<Artist?>) {
+            articalView.loadMoreArticalData(data)
+        }
+
+        override fun onError(code: Int, msg: String) {
+            articalView.showError(code, msg)
+        }
+
+    }
+
 
 
 }

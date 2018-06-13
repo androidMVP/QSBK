@@ -29,14 +29,18 @@ class ArticalFragment : ListFragment<Artist?>(), ArticalView {
 
     var category: String? = null
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-        category = arguments.getString("category")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        category = arguments?.getString("category")
         super.onViewCreated(view, savedInstanceState)
     }
 
     override fun showArticalData(datas: List<Artist?>) {
-        adapter?.setNewData(datas)
+        upFetchDataSuccess(datas)
     }
+    override fun loadMoreArticalData(datas: List<Artist?>) {
+        loadMoreRequestedSuccess(datas)
+    }
+
 
     override fun initView() {
         super.initView()
@@ -51,13 +55,14 @@ class ArticalFragment : ListFragment<Artist?>(), ArticalView {
 
     override fun requestData() {
         articalPresent.requestArticalList(category ?: "Android", 10, 1)
-        adapter?.replaceData(mutableListOf<Artist>())
-
     }
 
+    override fun loadMoreData() {
+        articalPresent.loadMoreArticalList(category ?: "Android", 10, page)
+    }
 
     override fun getBaseQuickAdapter(): BaseQuickAdapter<Artist?, BaseViewHolder>? {
-        return QSBKArticalAdapter(R.layout.item_artical_list, mutableListOf())
+        return QSBKArticalAdapter(R.layout.item_artical_list, datas)
     }
 
 
@@ -70,4 +75,6 @@ class ArticalFragment : ListFragment<Artist?>(), ArticalView {
             return fragment
         }
     }
+
+
 }

@@ -10,4 +10,6 @@ import com.mvp.news.modle.Artist
 interface ArticalView : LoadDataView {
 
     fun showArticalData(datas:List<Artist?>)
+
+    fun loadMoreArticalData(datas:List<Artist?>)
 }

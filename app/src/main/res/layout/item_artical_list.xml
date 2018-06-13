@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/im_artical_avatar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/author_avatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:layout_marginLeft="12dp"
         android:id="@+id/tv_artical_nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,14 +25,6 @@
         app:layout_constraintLeft_toRightOf="@+id/im_artical_avatar"
         app:layout_constraintTop_toTopOf="@+id/im_artical_avatar" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintBottom_toBottomOf="@+id/im_artical_avatar"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/im_artical_avatar" />
 
 
     <TextView

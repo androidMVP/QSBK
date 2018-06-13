@@ -6,7 +6,6 @@ def presentationDependencies = rootProject.ext.presentationDependencies
 
 android {
     compileSdkVersion cfg.compileSdkVersion
-    buildToolsVersion cfg.buildToolsVersion
     defaultConfig {
         applicationId "com.mvp.news"
         minSdkVersion cfg.minSdkVersion
@@ -14,6 +13,7 @@ android {
         versionCode  cfg.versionCode
         versionName  cfg.versionCode
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -31,17 +31,21 @@ kapt {
     generateStubs = true
 }
 repositories {
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven {  url "https://maven.google.com"  }
     mavenCentral()
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-        compile project(path: ':comm')
-        compile project(path: ':commbusiness')
+        implementation project(path: ':comm')
+        implementation project(path: ':commbusiness')
 
         kapt presentationDependencies.butterknifeCompiler
         kapt presentationDependencies.daggerCompiler
-        compile presentationDependencies.dagger
+        implementation presentationDependencies.dagger
+        implementation presentationDependencies.circleimageview
+        implementation presentationDependencies.multidex
+
+
 
     }
 }

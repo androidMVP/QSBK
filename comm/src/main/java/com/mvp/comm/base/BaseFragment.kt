@@ -14,16 +14,14 @@ abstract class BaseFragment : Fragment() {
 
     var activity: Activity? = null
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         rootView = view
         activity = getActivity()
         initView()
         setListener()
         initData(savedInstanceState)
-
+        super.onViewCreated(view, savedInstanceState)
     }
-
     abstract fun initData(savedInstanceState: Bundle?)
 
     abstract fun setListener()

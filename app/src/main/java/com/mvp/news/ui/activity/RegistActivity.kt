@@ -64,12 +64,12 @@ class RegistActivity : BaseActivity() {
         val mobile = registMobileEt?.text.toString()
         val psw = registPswEt?.text.toString()
 
-        if (mobile.isEmpty()!!) {
+        if (mobile.isEmpty()) {
             toast(R.string.error_mobile_not_empty)
             return
         }
 
-        if (psw.isEmpty()!!) {
+        if (psw.isEmpty()) {
             toast(R.string.error_psw_not_empty)
             return
         }

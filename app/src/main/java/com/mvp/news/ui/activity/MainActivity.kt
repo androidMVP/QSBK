@@ -32,7 +32,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initListener() {
-        rgMain.setOnCheckedChangeListener { group, checkedId ->
+        rgMain.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.rb_index_main -> showFragment(indexFragment)
                 R.id.rb_me_main -> showFragment(userInfoFragment)

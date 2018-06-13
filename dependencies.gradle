@@ -8,21 +8,15 @@ allprojects {
 
 ext {
     configuration = [
-            b_applicationId  : "com.yundao360.sxtb",
-            c_applicationId  : "com.yundao360.sxtc",
-            buildToolsVersion: "26.0.2",
-            compileSdkVersion   : 26,
-            minSdkVersion           : 19,
-            targetSdk        : 23,
-            b_version_code   : 1,
-            b_version_name   : "V1.0.4beat2",
-            c_version_code   : 130,
-            c_version_name   : "1.3.0_dev_beta7",
+            compileSdkVersion: 27,
+            minSdkVersion    : 19,
+            targetSdk        : 27,
+            version_code     : 1,
+            version_name     : "V1.0.4beat2",
             host_address     : "\"DEVELOP\""//PERFORM  TEST  DEVELOP  ONLINE  ALI_ONLINE
     ]
     libraries = [
-            appcompatV7                  : "26.1.0",
-            appcompatV4                  : "26.1.0",
+            appcompatVersion             : "27.1.0",
             butterknifeVersion           : '8.4.0',
             butterknifeCompilerVersion   : '8.4.0',
             gsonVersion                  : '2.8.0',
@@ -40,7 +34,6 @@ ext {
             recyclerviewVersion          : '23.4.0',
             timelineviewVersion          : '1.0.3',
             zxingVersion                 : '3.2.1',
-            swipelayout                  : "1.2.0@aar",
             gridPasswordViewVersion      : '0.3',
             leakcanaryVersion            : '1.5',
             leakcanaryDebugCompileVersion: '1.6-SNAPSHOT',
@@ -49,13 +42,13 @@ ext {
             photoViewVersion             : '1.2.5',
             designVersion                : '26.1.0',
             cardviewVerson               : '23.4.0',
-            circleimageviewV             : '2.1.0',
+            circleimageviewVersion       : '2.2.0',
             multidexVersion              : '1.0.0',
             easypermissions              : '0.2.1',
             bingoogolappleQrVersion      : '1.1.7',
             bingoogolappleZxingVersion   : '1.1.7',
             androidGifDrableVersion      : '1.2.6',
-            adapterHelperVersion         : '2.9.21',
+            adapterHelperVersion         : '2.9.40',
             viewpagerindicatorVersion    : '2.4.1.1@aar',
             daggerVersion                : '2.6',
             kotterknifeVersion           : '0.1.0-SNAPSHOT',
@@ -65,8 +58,10 @@ ext {
     ]
 
     presentationDependencies = [
-            appcompatV7                  : "com.android.support:appcompat-v7:${libraries.appcompatV7}",
-            appcompatV4                  : "com.android.support:support-v4:${libraries.appcompatV4}",
+            appcompatV7                  : "com.android.support:appcompat-v7:${libraries.appcompatVersion}",
+            appcompatV4                  : "com.android.support:support-v4:${libraries.appcompatVersion}",
+            design                       : "com.android.support:design:${libraries.appcompatVersion}",
+            cardview                     : "com.android.support:cardview-v7:${libraries.appcompatVersion}",
             butterKnife                  : "com.jakewharton:butterknife:${libraries.butterknifeVersion}",
             butterknifeCompiler          : "com.jakewharton:butterknife-compiler:${libraries.butterknifeCompilerVersion}",
             gson                         : "com.google.code.gson:gson:${libraries.gsonVersion}",
@@ -83,10 +78,9 @@ ext {
             adapterRx                    : "com.squareup.retrofit2:adapter-rxjava2:${libraries.adapterRxVersion}",
             adapterGson                  : "com.squareup.retrofit2:converter-gson:${libraries.adapterGsonVersion}",
             gridlayout                   : "com.android.support:gridlayout-v7:${libraries.gridlayout}",
-            recyclerview                 : "com.android.support:recyclerview-v7:${libraries.recyclerviewVersion}",
+            recyclerview                 : "com.android.support:recyclerview-v7:${libraries.appcompatVersion}",
             timelineview                 : "com.github.vipulasri:timelineview:${libraries.timelineviewVersion}",
             zxing                        : "com.google.zxing:core:${libraries.zxingVersion}",
-            swipelayout                  : "com.daimajia.swipelayout:library:${libraries.swipelayout}",
             gridPasswordView             : "com.jungly:gridPasswordView:${libraries.gridPasswordViewVersion}",
             leakcanary                   : "com.squareup.leakcanary:leakcanary-android-no-op:${libraries.leakcanaryVersion}",
             leakcanaryDebugCompile       : "com.squareup.leakcanary:leakcanary-android:${libraries.leakcanaryDebugCompileVersion}",
@@ -94,9 +88,7 @@ ext {
             photoView                    : "com.commit451:PhotoView:${libraries.photoViewVersion}",
             umanalytics                  : "com.umeng.analytics:analytics:latest.integration",
             materialish                  : "com.pnikosis:materialish-progress:${libraries.materialishVersion}",
-            design                       : "com.android.support:design:${libraries.designVersion}",
-            cardview                     : "com.android.support:cardview-v7:${libraries.cardviewVerson}",
-            circleimageview              : "de.hdodenhof:circleimageview:${libraries.circleimageviewV}",
+            circleimageview              : "de.hdodenhof:circleimageview:${libraries.circleimageviewVersion}",
             multidex                     : "com.android.support:multidex:${libraries.multidexVersion}",
             easypermissions              : "pub.devrel:easypermissions:${libraries.easypermissions}",
             BaseRecyclerViewAdapterHelper: "com.github.CymChad:BaseRecyclerViewAdapterHelper:${libraries.adapterHelperVersion}",
@@ -111,6 +103,7 @@ ext {
             kotlinStdlibJre              : "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlin_version}",
             anko                         : "org.jetbrains.anko:anko-sdk15:${libraries.ankoVersion}",
             glidokhttpIntegration        : "com.github.bumptech.glide:okhttp3-integration:${libraries.glidokhttpIntegrationVersion}",
-            constraintLayoutVersion      : "com.android.support.constraint:constraint-layout:${libraries.constraintLayoutVersion}"
+            constraintLayoutVersion      : "com.android.support.constraint:constraint-layout:${libraries.constraintLayoutVersion}",
+
     ]
 }

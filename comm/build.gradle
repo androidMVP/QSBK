@@ -5,17 +5,12 @@ def presentationDependencies = rootProject.ext.presentationDependencies
 
 android {
     compileSdkVersion cfg.compileSdkVersion
-    buildToolsVersion cfg.buildToolsVersion
-
 
     defaultConfig {
         minSdkVersion cfg.minSdkVersion
         targetSdkVersion cfg.targetSdkVersion
         versionCode cfg.versionCode
         versionName cfg.versionName
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
@@ -27,30 +22,31 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile presentationDependencies.appcompatV4
-    compile presentationDependencies.appcompatV7
-    compile presentationDependencies.okhttp
-    compile presentationDependencies.okio
-    compile presentationDependencies.retrofit
-    compile presentationDependencies.loggingInterceptor
-    compile presentationDependencies.adapterRx
-    compile presentationDependencies.adapterGson
-    compile presentationDependencies.gson
-    compile presentationDependencies.rxAndroid
-    compile presentationDependencies.rxJava
-    compile presentationDependencies.design
-    compile presentationDependencies.cardview
-    compile presentationDependencies.glide
-    compile presentationDependencies.eventbus
-    compile presentationDependencies.BaseRecyclerViewAdapterHelper
-    compile presentationDependencies.kotlinStdlib
-    compile presentationDependencies.kotlinStdlibJre
-    compile presentationDependencies.anko
-    compile presentationDependencies.constraintLayoutVersion
-    compile presentationDependencies.viewpagerindicator
-    compile presentationDependencies.glidokhttpIntegration
+    compile  presentationDependencies.appcompatV4
+    compile  presentationDependencies.appcompatV7
+    compile  presentationDependencies.okhttp
+    compile  presentationDependencies.okio
+    compile  presentationDependencies.retrofit
+    compile  presentationDependencies.loggingInterceptor
+    compile  presentationDependencies.adapterRx
+    compile  presentationDependencies.adapterGson
+    compile  presentationDependencies.gson
+    compile  presentationDependencies.rxAndroid
+    compile  presentationDependencies.rxJava
+    compile  presentationDependencies.design
+    compile  presentationDependencies.cardview
+    compile  presentationDependencies.glide
+    compile  presentationDependencies.eventbus
+    compile  presentationDependencies.BaseRecyclerViewAdapterHelper
+    compile  presentationDependencies.kotlinStdlib
+    compile  presentationDependencies.kotlinStdlibJre
+    compile  presentationDependencies.anko
+    compile  presentationDependencies.constraintLayoutVersion
+    compile  presentationDependencies.viewpagerindicator
+    compile  presentationDependencies.glidokhttpIntegration
 
 }
 repositories {
+    maven {  url "https://maven.google.com"  }
     mavenCentral()
 }
