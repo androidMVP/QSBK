@@ -38,6 +38,7 @@ class MainActivity : BaseActivity() {
                 R.id.rb_me_main -> showFragment(userInfoFragment)
             }
         }
+
     }
 
     override

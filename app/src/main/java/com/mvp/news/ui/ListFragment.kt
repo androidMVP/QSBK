@@ -116,4 +116,6 @@ abstract class ListFragment<T> : BaseFragment(), LoadDataView {
         adapter?.isUpFetching = false
         adapter?.loadMoreComplete()
     }
+
+
 }

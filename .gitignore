@@ -2,3 +2,12 @@
 *.bin
 
 *.lock
+
+.idea
+
+*.iml
+
+.gradle
+
+
+build

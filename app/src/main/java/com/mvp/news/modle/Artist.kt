@@ -11,4 +11,5 @@ class Artist(val _id: String,
              val type: String,
              val url: String,
              val used: Boolean,
+             val images: MutableList<String>,
              val who: String)

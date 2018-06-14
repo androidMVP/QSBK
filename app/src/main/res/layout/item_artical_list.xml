@@ -26,6 +26,14 @@
         app:layout_constraintTop_toTopOf="@+id/im_artical_avatar" />
 
 
+    <ImageView
+        android:id="@+id/im_artical_img"
+        app:layout_constraintTop_toBottomOf="@+id/im_artical_avatar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/artical_default"
+        android:layout_width="294dp"
+        android:layout_height="148dp"/>
 
     <TextView
         android:id="@+id/tv_artical_content"
@@ -37,18 +45,19 @@
         android:gravity="left"
         android:text="一名火车司机很久都没回家，他的妻子带着孩子在铁路旁边等他的列车路过，短暂的相见依然让彼此都很开心。感动 莫名想哭"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/im_artical_avatar" />
+        app:layout_constraintTop_toBottomOf="@+id/im_artical_img" />
 
     <TextView
-        android:id="@+id/tv_artical_comment"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_artical_time"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:text="好笑2018·评论2017·分享2016"
+        app:layout_constraintRight_toRightOf="parent"
         android:textColor="@color/color_8E8E93"
+        app:layout_constraintTop_toTopOf="@+id/im_artical_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/im_artical_avatar"
+        android:layout_marginRight="16dp"
         android:textSize="10sp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_artical_content" />
+        android:text="2018-10-10"/>
 
 
     <ImageView
@@ -56,7 +65,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/operation_support_press"
-        app:layout_constraintTop_toBottomOf="@+id/tv_artical_comment" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_artical_content" />
 
     <ImageView
         android:id="@+id/iv_artical_unsupport"
@@ -64,7 +73,7 @@
         android:layout_height="50dp"
         android:src="@drawable/operation_unsupport"
         app:layout_constraintLeft_toRightOf="@+id/iv_artical_support"
-        app:layout_constraintTop_toBottomOf="@+id/tv_artical_comment" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_artical_content" />
 
     <ImageView
         android:id="@+id/iv_artical_comment"
@@ -72,14 +81,14 @@
         android:layout_height="50dp"
         android:src="@drawable/operation_comments"
         app:layout_constraintLeft_toRightOf="@+id/iv_artical_unsupport"
-        app:layout_constraintTop_toBottomOf="@+id/tv_artical_comment" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_artical_content" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/operation_more"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_artical_comment" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_artical_content" />
 
     <View
         android:layout_marginTop="16dp"
