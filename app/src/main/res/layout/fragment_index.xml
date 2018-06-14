@@ -15,22 +15,15 @@
 
         <com.viewpagerindicator.TabPageIndicator
             android:id="@+id/titlepageindicator_main"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_toLeftOf="@+id/im_audit_mian"
             android:layout_weight="1"
             android:background="@color/color_b1"
-            app:strokeWidth="0dp" />
+            app:strokeWidth="5dp" />
 
-        <ImageView
-            android:id="@+id/im_audit_mian"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="center"
-            android:scaleType="center"
-            android:src="@drawable/ic_audit" />
+
 
         <ImageView
             android:id="@+id/im_create_mian"
