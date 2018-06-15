@@ -8,14 +8,14 @@ import com.chad.library.adapter.base.BaseViewHolder
 import com.mvp.news.App
 import com.mvp.news.R
 import com.mvp.news.di.subcomponent.artical.ArticalModule
-import com.mvp.news.di.subcomponent.main.MainModule
 import com.mvp.news.modle.Artist
-import com.mvp.news.modle.ContentArtical
 import com.mvp.news.ui.ListFragment
+import com.mvp.news.ui.activity.WebViewActivity
 import com.mvp.news.ui.adapter.QSBKArticalAdapter
 import com.mvp.news.ui.present.ArticalPresent
 import com.mvp.news.ui.view.ArticalView
 import org.jetbrains.anko.toast
+import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
 /**
@@ -34,17 +34,26 @@ class ArticalFragment : ListFragment<Artist?>(), ArticalView {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    override fun showArticalData(datas: List<Artist?>) {
-        upFetchDataSuccess(datas)
-    }
-    override fun loadMoreArticalData(datas: List<Artist?>) {
-        loadMoreRequestedSuccess(datas)
-    }
-
-
     override fun initView() {
         super.initView()
         App.graph.plus(ArticalModule(this)).injectTo(this)
+    }
+
+    override fun setListener() {
+        super.setListener()
+        adapter?.onItemClickListener = BaseQuickAdapter.OnItemClickListener { _, view, position ->
+            if (datas[position]?.url != null)
+                activity?.startActivity<WebViewActivity>("webUrl" to datas[position]?.url)
+        }
+    }
+
+
+    override fun showArticalData(datas: List<Artist?>) {
+        upFetchDataSuccess(datas)
+    }
+
+    override fun loadMoreArticalData(datas: List<Artist?>) {
+        loadMoreRequestedSuccess(datas)
     }
 
 

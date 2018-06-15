@@ -10,7 +10,6 @@ import com.mvp.comm.base.BaseFragment
 import com.mvp.news.App
 import com.mvp.news.R
 import com.mvp.news.di.subcomponent.main.MainModule
-import com.mvp.news.domain.usercase.artical.GetArticalCategoryTask
 import com.mvp.news.modle.Category
 import com.mvp.news.ui.adapter.ListFragmentAdapter
 import com.mvp.news.ui.present.MainPresent
